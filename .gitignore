@@ -1,0 +1,34 @@
+# Secrets - NEVER commit these
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+token.json
+secrets/
+
+# API keys and tokens
+**/config/secrets.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
