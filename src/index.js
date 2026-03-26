@@ -23,6 +23,10 @@ app.get("/health", (req, res) => {
   res.json({ status: "healthy" });
 });
 
+// Google OAuth routes
+const googleRoutes = require("./google/routes");
+app.use(googleRoutes);
+
 // --- Start everything ---
 async function main() {
   // 1. Start Express server
@@ -33,8 +37,17 @@ async function main() {
   // 2. Start Telegram bot
   startTelegramBot();
 
-  // 3. Start scheduled jobs
+  // 3. Start scheduled jobs (Meta jobs auto-skip via kill switch)
   startCronJobs();
+
+  // 4. Check Google OAuth scopes
+  const { needsReauth, getMissingScopes } = require("./google/auth");
+  if (needsReauth()) {
+    console.log(`⚠️  Google OAuth missing scopes: ${getMissingScopes().join(", ")}`);
+    console.log(`   Visit http://localhost:${PORT}/auth/google to re-authorize`);
+  } else {
+    console.log("✅ Google OAuth — all scopes granted");
+  }
 
   console.log("✅ Adsora OS is fully operational.");
 }

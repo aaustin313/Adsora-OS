@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscriber Segment Analysis — Adsora</title>
+<style>
+  @page { margin: 40px 50px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1a1a2e;
+    line-height: 1.6;
+    padding: 50px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  .cover {
+    text-align: center;
+    padding: 80px 0 60px;
+    border-bottom: 3px solid #1a1a2e;
+    margin-bottom: 40px;
+  }
+  .cover h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a2e;
+  }
+  .cover .subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 24px;
+  }
+  .cover .meta {
+    font-size: 13px;
+    color: #888;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 36px 0 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 24px 0 10px;
+  }
+  p, li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  ul { padding-left: 20px; margin-bottom: 16px; }
+  li { list-style: disc; margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  th {
+    background: #1a1a2e;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td { background: #fafafa; }
+  tr:nth-child(even) td { background: #f0f0f5; }
+  .highlight-green { background: #d4edda !important; font-weight: 600; }
+  .highlight-red { background: #f8d7da !important; }
+  .highlight-yellow { background: #fff3cd !important; }
+  .callout {
+    background: #f0f4ff;
+    border-left: 4px solid #1a1a2e;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout.warning {
+    background: #fff8e1;
+    border-left-color: #f5a623;
+  }
+  .callout.verdict {
+    background: #e8f5e9;
+    border-left-color: #2e7d32;
+  }
+  .callout.research {
+    background: #f3e5f5;
+    border-left-color: #7b1fa2;
+  }
+  .callout p { margin-bottom: 6px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .section-number {
+    display: inline-block;
+    background: #1a1a2e;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .metric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0 24px;
+  }
+  .metric-card {
+    background: #f5f5fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+  .metric-card .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .metric-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  .metric-card .note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+  }
+  .page-break { page-break-before: always; }
+  .footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+  }
+  .source-list { font-size: 12px; color: #555; }
+  .source-list li { margin-bottom: 4px; }
+  .formula {
+    background: #f5f5fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 12px 0 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    text-align: center;
+    color: #1a1a2e;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>Subscriber Segment Analysis</h1>
+  <p class="subtitle">Video Ads (iOS) vs. Lead Magnet Ads — Which segment deserves more budget?</p>
+  <p class="meta">Adsora &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Data: Beehiiv Cohort & CTR Analysis (Apr 2025 – Feb 2026)</p>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<h2><span class="section-number">1</span> Executive Summary</h2>
+<p>This report compares two subscriber acquisition segments to determine optimal budget allocation:</p>
+<ul>
+  <li><strong>Video Ads (iOS targeting)</strong> — $3.50 per subscriber, 100% iOS audience</li>
+  <li><strong>Lead Magnet Ads (mixed targeting)</strong> — $1.50 per subscriber, ~50/50 iOS/Android split</li>
+</ul>
+<p>We analyzed cohort retention (% active over time) and verified click-through rates (CTR). Because CTR is calculated as a percentage of openers (not total subscribers), the correct formula for actual clicks per subscriber accounts for both open rate and CTR.</p>
+
+<div class="callout verdict">
+  <p><strong>Bottom Line:</strong> Video ad subscribers have ~1.9x the verified CTR of lead magnet subscribers (0.65% vs 0.35%). When properly accounting for the CTR-on-openers math, both segments produce a nearly identical cost per click (~$2.94/click/year). However, video subscribers generate ~2.3x the clicks per subscriber per year (1.19 vs 0.51), making them significantly more valuable on a per-subscriber basis for a daily-send, click-dependent business. The recommendation is to invest primarily in video ads.</p>
+</div>
+
+<!-- APPLE MPP RESEARCH -->
+<h2><span class="section-number">2</span> Apple Mail Privacy Protection — Industry Research</h2>
+
+<p>Before analyzing our data, it's critical to understand how Apple Mail Privacy Protection (MPP) distorts open rate metrics. Here is what the industry research confirms:</p>
+
+<h3>2.1 — What MPP Does</h3>
+<p>Introduced in September 2021, Apple's Mail Privacy Protection pre-loads all email content — including tracking pixels — through Apple's proxy servers, regardless of whether the subscriber actually opens the email. This means every iOS Apple Mail user with MPP enabled (estimated at 97%+ of all Apple Mail users) registers as an "open" automatically.</p>
+
+<h3>2.2 — Documented Impact on Open Rates</h3>
+
+<div class="callout research">
+  <p><strong>Key industry findings on MPP inflation:</strong></p>
+</div>
+
+<table>
+  <tr>
+    <th>Finding</th><th>Data</th><th>Source</th>
+  </tr>
+  <tr>
+    <td style="text-align:left">Open rates nearly doubled post-MPP</td>
+    <td>Total open rates rose from <strong>22.6% to 40.5%</strong> (+18 pts); unique opens from <strong>15.2% to 29.0%</strong> (+14 pts)</td>
+    <td>Omeda (6-month study)</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Apple Mail users show near-100% open rates</td>
+    <td>Apple Mail reports <strong>~100% open rate</strong> for MPP-enabled contacts, regardless of actual engagement</td>
+    <td>Constant Contact, ActiveCampaign</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">MPP adoption is near-universal</td>
+    <td><strong>97%+</strong> of Apple device users have MPP enabled</td>
+    <td>Litmus</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Apple dominates email client share</td>
+    <td>Apple Mail accounts for <strong>49.29%</strong> of all email opens (Jan 2025); <strong>57%+</strong> per Litmus (Jul 2022)</td>
+    <td>Litmus, MarketingOps</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Real-world inflation example</td>
+    <td>A newsletter at 28% open rate <strong>jumped to 55% overnight</strong> after MPP rollout</td>
+    <td>Beehiiv</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Apple's proxy fires ~73% of pixel events</td>
+    <td>Apple Privacy Proxy accounts for <strong>73.11%</strong> of all pixel-firing events</td>
+    <td>MarketingOps</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Estimated peak inflation for Apple audiences</td>
+    <td>Open rates can reach <strong>~75%</strong> for Apple Mail users at peak adoption</td>
+    <td>Litmus</td>
+  </tr>
+</table>
+
+<h3>2.3 — What This Means for Our Data</h3>
+<p>Our video ad segment is <strong>100% iOS</strong>. This means virtually all open-rate-based metrics ("% active") are unreliable — the raw ~50% retention at Month 6+ is substantially inflated by phantom opens. The lead magnet segment (~50% iOS) is also partially inflated, but less severely.</p>
+<p><strong>Critically:</strong> Click-through rates are not affected by MPP. Clicks require human action and cannot be faked. However, CTR is calculated as a percentage of openers — so when the open denominator is inflated by MPP, the reported CTR appears lower than the true engagement rate of real openers.</p>
+
+<div class="callout warning">
+  <p><strong>Note on Beehiiv:</strong> Beehiiv does filter some MPP noise from its analytics, so the "% active" numbers shown are not raw inflated figures. However, the filtering is imperfect, and iOS-heavy audiences will still show inflated activity rates.</p>
+</div>
+
+<!-- SEGMENT OVERVIEW -->
+<h2><span class="section-number">3</span> Segment Overview</h2>
+
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="label">Video Ads — Cost/Sub</div>
+    <div class="value">$3.50</div>
+    <div class="note">100% iOS &nbsp;|&nbsp; UTM: 120221520824290090</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">Lead Magnet — Cost/Sub</div>
+    <div class="value">$1.50</div>
+    <div class="note">~50/50 iOS/Android &nbsp;|&nbsp; Multiple UTMs</div>
+  </div>
+</div>
+
+<!-- COHORT RETENTION -->
+<h2><span class="section-number">4</span> Cohort Retention (% Active Over Time)</h2>
+
+<h3>4.1 — Video Ads (iOS) Cohort Retention</h3>
+<table>
+  <tr>
+    <th>Cohort</th><th>Mo 0</th><th>Mo 1</th><th>Mo 2</th><th>Mo 3</th><th>Mo 4</th><th>Mo 5</th><th>Mo 6</th><th>Mo 7</th><th>Mo 8</th><th>Mo 9</th><th>Mo 10</th>
+  </tr>
+  <tr>
+    <td><strong>Apr '25</strong></td><td>68.85%</td><td>68.85%</td><td>62.42%</td><td>57.73%</td><td>54.76%</td><td>52.66%</td><td>52.16%</td><td>50.56%</td><td>49.32%</td><td>50.06%</td><td>48.95%</td>
+  </tr>
+  <tr>
+    <td><strong>May '25</strong></td><td>66.39%</td><td>68.13%</td><td>61.76%</td><td>57.30%</td><td>54.92%</td><td>53.04%</td><td>50.86%</td><td>48.94%</td><td>48.15%</td><td>46.79%</td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Jun '25</strong></td><td>68.65%</td><td>67.58%</td><td>65.48%</td><td>58.83%</td><td>56.77%</td><td>53.90%</td><td>52.41%</td><td>50.06%</td><td>48.56%</td><td></td><td></td>
+  </tr>
+</table>
+<p>Flattens around 49–52% at Month 6+. Heavily inflated by iOS MPP phantom opens (see Section 2).</p>
+
+<h3>4.2 — Lead Magnet Ads Cohort Retention (Set A: Jul–Dec 2025)</h3>
+<table>
+  <tr>
+    <th>Cohort</th><th>Mo 0</th><th>Mo 1</th><th>Mo 2</th><th>Mo 3</th><th>Mo 4</th><th>Mo 5</th><th>Mo 6</th><th>Mo 7</th>
+  </tr>
+  <tr>
+    <td><strong>Jul '25</strong></td><td>29.81%</td><td>58.34%</td><td>53.05%</td><td>50.95%</td><td>43.00%</td><td>40.20%</td><td>39.60%</td><td>36.77%</td>
+  </tr>
+  <tr>
+    <td><strong>Aug '25</strong></td><td>48.69%</td><td>54.73%</td><td>52.05%</td><td>43.59%</td><td>40.04%</td><td>37.51%</td><td>34.82%</td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Sep '25</strong></td><td>51.19%</td><td>59.37%</td><td>49.64%</td><td>45.76%</td><td>42.45%</td><td>39.35%</td><td></td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Oct '25</strong></td><td>51.10%</td><td>57.98%</td><td>54.63%</td><td>48.05%</td><td>43.40%</td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Nov '25</strong></td><td>51.17%</td><td>58.16%</td><td>52.78%</td><td>45.88%</td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Dec '25</strong></td><td>54.55%</td><td>54.55%</td><td>50.00%</td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+</table>
+
+<h3>4.3 — Lead Magnet Ads Cohort Retention (Set B: Oct 2025–Feb 2026)</h3>
+<table>
+  <tr>
+    <th>Cohort</th><th>Mo 0</th><th>Mo 1</th><th>Mo 2</th><th>Mo 3</th><th>Mo 4</th>
+  </tr>
+  <tr>
+    <td><strong>Oct '25</strong></td><td>47.85%</td><td>58.87%</td><td>56.09%</td><td>48.72%</td><td>44.39%</td>
+  </tr>
+  <tr>
+    <td><strong>Nov '25</strong></td><td>54.63%</td><td>57.76%</td><td>53.55%</td><td>47.21%</td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Dec '25</strong></td><td>44.19%</td><td>49.09%</td><td>42.12%</td><td></td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Jan '26</strong></td><td>45.97%</td><td>52.43%</td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td><strong>Feb '26</strong></td><td>52.45%</td><td></td><td></td><td></td><td></td>
+  </tr>
+</table>
+<p>Stabilizes around 35–44% at Month 6. Less inflated (50% Android), but still partially affected.</p>
+
+<!-- CTR ANALYSIS -->
+<div class="page-break"></div>
+<h2><span class="section-number">5</span> Verified Click-Through Rate — The Real Signal</h2>
+<p>Click-through rate cannot be faked by Apple MPP. Clicks require real human action. This is the only reliable engagement metric for comparing these segments.</p>
+
+<h3>5.1 — Video Ads (iOS) — Verified CTR</h3>
+<table>
+  <tr>
+    <th>Cohort Week</th><th>Click-Through Rate</th><th>Verified CTR</th>
+  </tr>
+  <tr><td>Apr 14, 2025</td><td>~0.9%</td><td class="highlight-green">~0.8%</td></tr>
+  <tr><td>Apr 21, 2025</td><td>~1.9%</td><td class="highlight-green">~0.9%</td></tr>
+  <tr><td>Apr 28, 2025</td><td>~0.65%</td><td>~0.6%</td></tr>
+  <tr><td>May 5, 2025</td><td>~0.95%</td><td class="highlight-green">~0.75%</td></tr>
+  <tr><td>May 12, 2025</td><td>~1.0%</td><td>~0.6%</td></tr>
+</table>
+<p><strong>Average verified CTR: ~0.65%</strong> (of openers)</p>
+
+<h3>5.2 — Lead Magnet Ads (Campaign A, Oct–Nov 2025) — Verified CTR</h3>
+<table>
+  <tr>
+    <th>Cohort Week</th><th>Click-Through Rate</th><th>Verified CTR</th>
+  </tr>
+  <tr><td>Oct 20, 2025</td><td>~0.4%</td><td>~0.3%</td></tr>
+  <tr><td>Oct 27, 2025</td><td>~0.5%</td><td>~0.4%</td></tr>
+  <tr><td>Nov 3, 2025</td><td>~0.45%</td><td>~0.37%</td></tr>
+  <tr><td>Nov 10, 2025</td><td>~0.55%</td><td class="highlight-green">~0.5%</td></tr>
+  <tr><td>Nov 17, 2025</td><td>~0.35%</td><td>~0.3%</td></tr>
+</table>
+<p><strong>Average verified CTR: ~0.35%</strong> (of openers)</p>
+
+<h3>5.3 — Lead Magnet Ads (Campaign B, Aug–Sep 2025) — Verified CTR</h3>
+<table>
+  <tr>
+    <th>Cohort Week</th><th>Click-Through Rate</th><th>Verified CTR</th>
+  </tr>
+  <tr><td>Aug 18, 2025</td><td>~0.35%</td><td>~0.3%</td></tr>
+  <tr><td>Aug 25, 2025</td><td>~0.35%</td><td>~0.3%</td></tr>
+  <tr><td>Sep 1, 2025</td><td>~0.7%</td><td>~0.45%</td></tr>
+  <tr><td>Sep 8, 2025</td><td>~0.9%</td><td class="highlight-green">~0.5%</td></tr>
+  <tr><td>Sep 15, 2025</td><td>~0.35%</td><td>~0.3%</td></tr>
+</table>
+<p><strong>Average verified CTR: ~0.35%</strong> (of openers)</p>
+
+<h3>5.4 — Key Takeaway</h3>
+<p>Video subscribers have approximately <strong>1.9x the verified CTR</strong> of lead magnet subscribers (0.65% vs 0.35%). This is a real, unfakeable engagement difference.</p>
+
+<!-- CORRECTED MATH -->
+<div class="page-break"></div>
+<h2><span class="section-number">6</span> Corrected Click Economics</h2>
+
+<h3>6.1 — Why the Math Matters</h3>
+<p>CTR is calculated as a percentage of <strong>openers</strong>, not total subscribers. To calculate actual clicks per subscriber, we must account for open rate:</p>
+
+<div class="formula">
+  Clicks per subscriber per email = Open Rate &times; CTR
+</div>
+
+<p>This is important because a subscriber who never opens will never click, regardless of the CTR among openers.</p>
+
+<h3>6.2 — Video Ads (iOS) — Click Math</h3>
+<table>
+  <tr>
+    <th>Step</th><th>Metric</th><th>Value</th><th>Notes</th>
+  </tr>
+  <tr>
+    <td style="text-align:left">1. Start</td>
+    <td>1 subscriber</td>
+    <td>1.00</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left">2. Open rate</td>
+    <td>~50% active at Mo 6</td>
+    <td>0.50</td>
+    <td>Beehiiv-filtered, still inflated by iOS MPP</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">3. Verified CTR</td>
+    <td>0.65% of openers</td>
+    <td>0.0065</td>
+    <td>Real human clicks</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">4. Clicks per sub per email</td>
+    <td>0.50 &times; 0.0065</td>
+    <td class="highlight-green">0.00325</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left">5. Clicks per sub per year</td>
+    <td>0.00325 &times; 365</td>
+    <td class="highlight-green">1.19</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left">6. Cost per click per year</td>
+    <td>$3.50 &divide; 1.19</td>
+    <td><strong>$2.94</strong></td>
+    <td></td>
+  </tr>
+</table>
+
+<h3>6.3 — Lead Magnet Ads — Click Math</h3>
+<table>
+  <tr>
+    <th>Step</th><th>Metric</th><th>Value</th><th>Notes</th>
+  </tr>
+  <tr>
+    <td style="text-align:left">1. Start</td>
+    <td>1 subscriber</td>
+    <td>1.00</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left">2. Open rate</td>
+    <td>~40% active at Mo 6</td>
+    <td>0.40</td>
+    <td>Less inflated (50% Android)</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">3. Verified CTR</td>
+    <td>0.35% of openers</td>
+    <td>0.0035</td>
+    <td>Real human clicks</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">4. Clicks per sub per email</td>
+    <td>0.40 &times; 0.0035</td>
+    <td>0.00140</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left">5. Clicks per sub per year</td>
+    <td>0.00140 &times; 365</td>
+    <td>0.51</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="text-align:left">6. Cost per click per year</td>
+    <td>$1.50 &divide; 0.51</td>
+    <td><strong>$2.94</strong></td>
+    <td></td>
+  </tr>
+</table>
+
+<h3>6.4 — Side-by-Side Comparison</h3>
+<table>
+  <tr>
+    <th>Metric</th><th>Video Ads (iOS)</th><th>Lead Magnet Ads</th><th>Ratio</th>
+  </tr>
+  <tr>
+    <td><strong>Cost per subscriber</strong></td>
+    <td>$3.50</td>
+    <td>$1.50</td>
+    <td>2.3x more expensive</td>
+  </tr>
+  <tr>
+    <td><strong>Open rate (Mo 6)</strong></td>
+    <td>~50%</td>
+    <td>~40%</td>
+    <td>1.25x (but inflated for iOS)</td>
+  </tr>
+  <tr>
+    <td><strong>Verified CTR (of openers)</strong></td>
+    <td class="highlight-green">~0.65%</td>
+    <td>~0.35%</td>
+    <td class="highlight-green">~1.9x higher</td>
+  </tr>
+  <tr>
+    <td><strong>Clicks per sub per email</strong></td>
+    <td class="highlight-green">0.00325</td>
+    <td>0.00140</td>
+    <td class="highlight-green">2.3x more</td>
+  </tr>
+  <tr>
+    <td><strong>Clicks per sub per year</strong> (365 emails)</td>
+    <td class="highlight-green">~1.19</td>
+    <td>~0.51</td>
+    <td class="highlight-green">2.3x more</td>
+  </tr>
+  <tr>
+    <td><strong>Cost per click per year</strong></td>
+    <td>$2.94</td>
+    <td>$2.94</td>
+    <td><strong>Equal</strong></td>
+  </tr>
+  <tr>
+    <td><strong>iOS audience %</strong></td>
+    <td>100%</td>
+    <td>~50%</td>
+    <td>—</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <p><strong>Key finding:</strong> The cost per click per year is virtually identical (~$2.94) between both segments. However, video subscribers generate <strong>2.3x more clicks per subscriber</strong> (1.19 vs 0.51 per year). This means each video subscriber is a 2.3x more productive asset on your list.</p>
+</div>
+
+<!-- ANALYSIS -->
+<div class="page-break"></div>
+<h2><span class="section-number">7</span> Analysis</h2>
+
+<h3>7.1 — The iOS Inflation Problem (Research-Backed)</h3>
+<p>Industry data confirms that Apple MPP inflates open rates dramatically. Omeda's 6-month study showed total open rates nearly doubling from 22.6% to 40.5% after MPP launched. Apple Mail users can show near-100% open rates because MPP pre-loads every email automatically. With 97%+ of Apple users having MPP enabled, our 100%-iOS video segment's "% active" data is significantly overstated.</p>
+<p>However, this inflation also affects the CTR calculation: because the open denominator is inflated by phantom opens, the reported CTR for iOS audiences appears <em>lower</em> than it actually is among real openers. This means the video segment's true CTR among genuinely engaged openers is likely even higher than the reported 0.65%.</p>
+
+<h3>7.2 — Equal Cost Per Click, Unequal Value Per Subscriber</h3>
+<p>With corrected math (CTR on openers, not total subscribers), both segments arrive at roughly the same cost per click per year (~$2.94). This might suggest it doesn't matter which segment you invest in. But that conclusion is wrong, because:</p>
+<ul>
+  <li><strong>Video subscribers produce 2.3x more clicks per person per year.</strong> Each video subscriber is a significantly more productive asset sitting on your list. You're sending 365 emails/year — a subscriber who clicks 1.19 times is generating more than double the monetization opportunities of one who clicks 0.51 times.</li>
+  <li><strong>More clicks per sub = more revenue touchpoints.</strong> If each click has a chance of converting into revenue (ad clicks, affiliate offers, product purchases), a subscriber generating 2.3x the clicks generates 2.3x the revenue opportunities over their lifetime.</li>
+  <li><strong>Higher-clicking subscribers improve list-level deliverability.</strong> ISPs use engagement signals (including clicks) to determine inbox placement. A list with more active clickers gets better deliverability for everyone, amplifying the value across your entire subscriber base.</li>
+  <li><strong>Volume matters for scale.</strong> To get the same total number of clicks from lead magnet subscribers, you'd need 2.3x more subscribers — which means managing a larger list, paying higher ESP costs, and dealing with more dead weight.</li>
+</ul>
+
+<h3>7.3 — The MPP Caveat on Our Math</h3>
+<p>The open rates we're using in our calculation are Beehiiv-filtered, but still partially inflated for the iOS segment. If the video segment's real open rate is lower than 50% (say 35-40% after fully stripping MPP inflation), then:</p>
+<ul>
+  <li>Clicks per sub per year would drop to ~0.83–0.95 (still higher than lead magnet's 0.51)</li>
+  <li>Cost per click per year would rise to ~$3.68–$4.22</li>
+  <li>Lead magnet would win on pure cost-per-click efficiency</li>
+</ul>
+<p>However, the same logic applies: even with further deflated open rates, video subscribers still generate more clicks per person, making each subscriber a more valuable list asset.</p>
+
+<!-- CONCLUSIONS -->
+<h2><span class="section-number">8</span> Conclusions & Recommendations</h2>
+
+<div class="callout verdict">
+  <p><strong>Primary Recommendation:</strong> Video ad subscribers are the higher-quality segment. At equal cost-per-click economics and 2.3x the clicks per subscriber, they are the more productive and valuable audience. Allocate the majority of budget to video ads.</p>
+</div>
+
+<h3>Rationale</h3>
+<ul>
+  <li><strong>2.3x more clicks per subscriber per year</strong> — each video sub generates 1.19 clicks vs. 0.51 for lead magnet across 365 daily emails.</li>
+  <li><strong>Cost per click is equal (~$2.94)</strong> — you're not paying more per click, you're getting more clicks per person.</li>
+  <li><strong>Smaller, more engaged list is better</strong> than a larger, less engaged one — lower ESP costs, better deliverability, higher revenue per subscriber.</li>
+  <li><strong>Video CTR is genuinely 1.9x higher</strong> — confirmed by verified clicks that cannot be inflated by Apple MPP.</li>
+</ul>
+
+<h3>Recommended Budget Allocation</h3>
+<table>
+  <tr><th>Segment</th><th>Budget Share</th><th>Rationale</th></tr>
+  <tr><td class="highlight-green"><strong>Video Ads</strong></td><td class="highlight-green"><strong>60–70%</strong></td><td>2.3x clicks/sub, equal cost/click, higher list quality</td></tr>
+  <tr><td><strong>Lead Magnet Ads</strong></td><td><strong>30–40%</strong></td><td>Diversification, lower iOS dependency, volume buffer</td></tr>
+</table>
+
+<h3>Key Risks & Watch Items</h3>
+<ul>
+  <li><strong>Video CPL scalability:</strong> Monitor whether the $3.50 CPL holds as spend increases. If CPL climbs above ~$4.50, the cost-per-click shifts in favor of lead magnet.</li>
+  <li><strong>Don't kill lead magnet entirely:</strong> It provides cost-efficient volume and reduces dependency on iOS-only audiences. If Apple further changes privacy policies, an all-iOS list carries platform risk.</li>
+  <li><strong>Get downstream conversion data:</strong> Revenue-per-click by segment is the missing piece. If video subscribers also convert at a higher rate per click (not just more clicks), the case for video becomes even stronger.</li>
+  <li><strong>Content optimization is the biggest lever:</strong> Regardless of segment, improving email content to push verified CTR higher across the board compounds massively over 365 sends. Even a 0.1% CTR improvement = significant annual click gains.</li>
+  <li><strong>Consider the MPP discount:</strong> If video's real open rate is closer to 35-40% (not 50%), cost per click rises to ~$3.70–$4.20 vs. lead magnet's $2.94. Monitor this by tracking absolute click volumes, not percentages.</li>
+</ul>
+
+<!-- SOURCES -->
+<div class="page-break"></div>
+<h2><span class="section-number">9</span> Sources — Apple MPP Research</h2>
+<ul class="source-list">
+  <li><strong>Omeda</strong> — "The Impact of Apple's Mail Privacy Protection – 6 Months Later" (Mar 2022). Open rates rose from 22.6% to 40.5% total; 15.2% to 29.0% unique. <em>omeda.com/blog/the-impact-of-apples-mail-privacy-protection-6-months-later/</em></li>
+  <li><strong>Litmus</strong> — "Apple's Mail Privacy Protection Is Here: What It Actually Means for Email Marketers." Estimated ~75% open rate at peak adoption for Apple Mail; 96%+ MPP opt-in rate; Apple devices = 49.8% of email opens. <em>litmus.com/blog/apple-mail-privacy-protection-for-marketers</em></li>
+  <li><strong>MarketingOps</strong> — "Email Marketing and Apple Mail Privacy Policy (MPP): A Death of Open Rate Review." Apple MPP impacts 52.7% of opens; accounts for 73.11% of pixel-firing events; Apple Mail = 57%+ of combined opens. <em>marketingops.com/email-marketing-and-apple-mail-privacy-policy-mpp-a-death-of-open-rate-review/</em></li>
+  <li><strong>Beehiiv</strong> — "Impact of Apple MPP on Open Rates (And What To Track Instead)." Example: newsletter at 28% jumped to 55% post-MPP; recommends clicks and conversions as reliable metrics. <em>beehiiv.com/blog/apple-mpp-open-rate</em></li>
+  <li><strong>Constant Contact</strong> — "How Apple's Mail Privacy Protection Impacts Email Marketing." Apple Mail reports ~100% open rates for MPP-enabled contacts. <em>constantcontact.com/blog/apple-mail-privacy-protection-for-email-marketing/</em></li>
+  <li><strong>Paubox</strong> — "How Apple Mail Privacy Protection inflates email open rates." MPP auto-downloads content including tracking pixels regardless of user interaction. <em>paubox.com/blog/how-apple-mail-privacy-protection-inflates-email-open-rates</em></li>
+</ul>
+
+<div class="footer">
+  <p>Adsora &nbsp;|&nbsp; Subscriber Segment Analysis &nbsp;|&nbsp; March 2026 &nbsp;|&nbsp; Confidential</p>
+</div>
+
+</body>
+</html>

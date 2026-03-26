@@ -1,0 +1,114 @@
+https://www.federalregister.gov/documents/2022/03/11/2022-04679/deceptive-or-unfair-earnings-claims
+
+
+This memorandum provides guidelines for the review of ’s advertising and marketing materials, first discussing the types of claims and issues that may present higher levels of risk, and then summarizing an overall strategy in proposing revisions to high risk claims that may appear in ’s copy. 
+The issues discussed below are all born from the FTC’s requirement that advertisements must not be misleading and that advertisers must be able to substantiate the claims made in their advertisements at the time the claim is made. This means that every claim in a print promo, a video, an email, etc. must be verified prior to publication. A record of that verification should be kept in order to substantiate the claim if it ever becomes necessary to do so.
+I.        Claims to Look Out For
+1. Future Earnings Claims
+Future earnings claims, also known as “income claims” or “return on investment claims,” are extremely high risk. While not per se unlawful, the FTC believes that future earnings claims are difficult to substantiate and are almost always false or misleading, conveying a message that consumers may obtain wealth quickly without much cost, risk, or effort.
+As it relates to ’s copy, look out for claims that someone will make more money if she or he signs up with . As these claims are usually targeted at the ordinary consumer, who has no experience trading, they are even higher risk.
+As with any other type of advertising claim, a future earnings claim may be made expressly (e.g., “sign up for this service and you will make $100,000 in six months”) or impliedly (e.g., “the real money lies in our funnels, which are so easy to use and profit from.”). Importantly, what the FTC considers to be an earnings claim is quite broad, including generic phrases such as “financial freedom” and “financial security.” Claims offering an ordinary consumer “everything they need” to begin successfully trading right away are also particularly problematic in the FTC’s view. Lastly, avoid profit related guarantees.
+Examples of future earnings claims include the following:
+* “If you do this right you will be much more profitable if not extremely profitable in a short amount of time if you take this seriously.”
+* “Expanding this pattern to other stocks or ETFs is automatically going to make you more profitable, I guarantee that.”
+        These claims can be rewritten to avoid making future earnings claims. For example:
+* “If you do this right and you take this seriously, you will be in a much better position to understand the mentality of other investors in the market.”
+* “Of course, you always hear about diversifying and spreading your risk and similarly we like to use this method to spread out over a number of stocks or ETFs and not just one or two stocks.”
+
+
+
+
+Some examples of future earnings claims that the FTC may consider misleading or deceptive include:
+
+
+* Guarantees of a specific level of earnings: "Make $5,000 a month with our program"
+* Representations about the typical or average earnings of consumers using the product or service: "Most people who use our program make at least $3,000 a month"
+* Representations about the ease or quickness with which consumers can achieve a certain level of earnings: "Make $10,000 in your first month"
+* Representations that the earnings potential is not limited by the time or effort a consumer is willing to put in: "Make $10,000 a month working only an hour a day"
+* Testimonials or endorsements that present extraordinary earnings results but do not disclose that the results are not typical: "I made $20,000 in my first month using this program"
+
+
+2. Other Important Claims/Issues to Look Out For
+1. Testimonials
+Customer testimonials generally raise two distinct issues. First,  must have the customer’s consent to use her or his name and image.
+Second, and more importantly,  is responsible for what its customers say in testimonials that  publishes, meaning that, if a customer makes a claim in a testimonial that requires substantiation,  must be able to provide substantiation for that claim. Additionally, if a customer’s testimonial may be interpreted to convey the results that an average customer should expect, then  must be able to demonstrate, with adequate substantiation, that the average customer will experience the same results as the customer in the testimonial. If such substantiation cannot be provided by , then it must include an adequate disclaimer.
+Here are some illustrative examples:
+Testimonial 1: Customer says that ’s content is the “greatest,” “the best,” “the most powerful,” “the most useful”, or words or phrases to that effect. These statements require no substantiation and no disclaimer because these are statements of opinion.
+Testimonial 2: Customer says that  made her $100,000 in the first six months since subscribing. This is a statement of fact that requires two levels of substantiation. First, the customer making the statement must have, in fact, made $100,000 in the first six months after signing up with . Second, because a reasonable consumer could interpret this testimonial to mean that she or he, too, will make $100,000 in the first six months if she or he signs up with ,  needs substantiation showing that the average customer makes $100,000 in the first six months after signing up with . We assume that the first level of substantiation exists (i.e., the statement is true as to the customer submitting the testimonial), but not the second (i.e.,  has no data showing that the average customer makes $100,000 in the first six months), so the standard disclaimer that we have prepared for  is necessary:
+Testimonials shown are real experiences from paying users of Wealth Builders Institute. Their results are not typical and your experience will vary based upon your effort, education, business model, and market forces beyond our control. We make no earnings claims or return on investment claims, and you may not make your money back.
+2. Free-to-Pay Offers and Subscription Offers
+ may offer certain of its services on a free-trial basis that convert to a paid subscription at the end of the applicable free-trial period if the customer does not cancel.
+         may also offer certain of its services on a subscription basis, meaning that the customer is billed at the time of enrollment and each month thereafter until they cancel.
+The federal Restore Online Shopper’s Confidence Act (“ROSCA”) and California’s auto-renewal law require that the following information be clearly disclosed to the customer before obtaining the customer’s billing information in connection with a free-trial that converts to a paid subscription at the end of the trial period:
+1. How long the free-trial period lasts;
+2. How much the customer will be charged after the free-trial period ends and thereafter;
+3. The frequency of the billing (e.g., every month) after the trial-period ends; and
+4. How the customer may cancel before the trial-period ends, and after the paid subscription begins if the customer does not cancel. This is accomplished by providing the relevant telephone number, hyperlink, or email address customers can use to cancel (California customers must be provided a way to cancel online, e.g., by e-mail or through her/his customer portal).
+If the offer does not involve a free-trial but instead simply enrolls the customer into a paid subscription, then the following must be disclosed to the customer before obtaining the customer’s billing information:
+1. How much the customer will be charged;
+2. The frequency of the billing (e.g., every month); and
+3. How the customer may cancel by providing the relevant telephone number, hyperlink, or email address (California customers must be provided a way to cancel online, e.g., by e-mail or through his/her customer portal).
+3. “Total Value” Claims
+Some of ’s offers may include claims conveying the message that the customer will receive products or services with a total value that is dramatically higher than what the customer will actually pay. Here is an example of a “total value” claim:
+When You Sign Up Today, You Get:
+* Our daily top pick ($799 Value)
+* Access to our past content ($1,399 Value)
+* Monthly live webinar where YOU can ask questions ($2,999 Value)
+                                TOTAL VALUE: $5,197
+                                YOUR EXCLUSIVE OFFER: $399!!
+
+        To be truthful and non-misleading, there must be substantiation showing either that  has sold each item for the listed price (i.e. that the listed price is a “bona fide price,” or a competitor has sold a product or service similar to the ones offered by  for the listed price. Be on the lookout for different lists of products/services along the way, as  may change its offers.
+4. “Free” Claims
+Separate and apart from the free-trials discussed above,  may offer certain products or services for “free.” The FTC requires the following in connection with “free” claims: “When making ‘Free’ or similar offers all of the terms and conditions upon which one can receive and retain the ‘Free’ item should be set forth clearly and conspicuously at the outset of the offer so as to leave no reasonable probability that the terms of the offer might be misunderstood.” To be “free,” the customer must not be charged any amount for the product or service. If the product or service that is being provided for “free” is in connection with the customer’s purchase of another product or service, then the customer must not be charged any additional amount for the “free” product or service, and the price for the product or service that is purchased may not be increased.
+5. Product/Service Superiority Claims
+        As the phrase connotes, a “superiority claim” is one in which advertiser conveys an express or implied message that its product or service is superior as compared to products or services offered by its competitors. In short, these are “us vs. them” claims. Superiority claims may include express claims that purport to be based on some objective data, such as “Our software will increase your revenue by 2X as compared to software offered by our competitors”, or claims that simply convey the message that “Our software is the best in the business.” The former are higher risk if they are not substantiated by objective data, while the latter likely fall into the category of non-actionable puffery because what makes the software “the best” can vary widely from user to user. For example, the company may think its software is “the best” because it is the easiest to use, and a user may think the software is “the best” because it is the most comprehensive offering.
+6. Fictional Storylines
+        Fictional storylines, such as secret organizations or other types of role playing should be avoided. Fictional storylines are impossible to substantiate. Furthermore, the use of props (money, cars, boats, etc.) can create an implied earnings claim, which should be avoided.
+7. Simulated Trade Results – Back Tested Data
+        Promotions may contain claims of earnings that “could have been realized” had the consumer or anyone else previously followed the product plan – though there is no proof a trade was ever made. These are also referred to as “simulated trade results” or “back tested data.”  Simulated trade results are ok to use in promos, so long as their use is transparent and adequately discloses the typicality of the earnings.
+        Recognize that simulated trade results are acceptable for use because they can be substantiated. The program did in fact issue a buy alert on a certain date, the program did in fact issue a sell alert on a later date, and the alert would have earned someone who traded those alerts a profit. But while the claim can be substantiated, there is still a risk that the claim is misleading if it omits material facts that would alter the overall impression of the claim. Information that is relevant to the overall impression of the claim would be things like the track record of the program includes losing trades as well as winning trades, the program’s winning trades are not typically as sizeable as the showcased simulated trade, this simulated trade assumes an initial starting balance/wager of one hundred thousand dollars, or there is some other undisclosed risk.
+        To combat the potentially misleading nature of simulated trade results, the copy should disclose that though the showcased trade is based on real program alerts to buy and sell, it is simulated and the speaker did not actually make the trade. Furthermore, the copy should disclaim that the showcased display is not intended to provide an example of a typical or average result for the program. To the contrary, the result shown is not typical and are not a result that should be expected. We’ve all heard the disclaimer “past performance is no guarantee of future results.” The assumed starting balance should also be disclosed.
+8. Limited Offers
+        Creating a sense of urgency is important to marketers; however, such claims must be factually accurate. Therefore, any limitation must be bona fide to ensure that a limited time/supply offer does not create a false sense of urgency. Often times, limited offer claims can expose improper value claims.
+II.        Overall Strategy for Review of ’s Marketing/Advertising
+While each of the claims above are important to identify when reviewing ’s advertising and marketing, at a minimum, we must identify the highest risk claims. Below are the general categories of highest risk claims, as well as some general rules to follow in editing ’s copy:
+1. Claims Targeted at “Ordinary” Consumers: Any claim that appears targeted at ordinary consumers who have no existing trading experience should receive a higher level of scrutiny and, as applicable, more robust editing for compliance.
+2. Testimonials/Customer Stories:  may use testimonials or customer stories as part of its marketing. Unless the testimonials/stories contain earnings claims that are actually typical of the average user and can be substantiated, then use of the standard disclaimer will likely suffice.
+3. “Guarantees”: In the same vein as number 2 above, guaranteed earnings claims, in whatever form they may take, will likely require line-editing to remove any express or implied takeaway of a guarantee. Note that a guaranteed earnings claim can be made using multiple approaches, such as “Buy  and you will make money” or “Here is the house you will live in if you buy .” Using qualifying phrases in your editing such as “up to,” “can” or “may” could minimize compliance risk, but often don’t change the overall net impression of the claim.
+4. Efforts Claims: Claims that  is “easy to learn” or “easy to use”, by themselves, are low risk. Claims that  is “easy to learn and will make you money” or “easy to use to make money” are high risk, and would need to be edited to something like “easy to learn and implement.”
+5. Success-in-a-Box Claims: Claims that the ordinary consumer will be provided “everything they need” in order to become a successful trader are high risk. These types of claims should be revised to convey the message that  will provide the “tools and strategies” that have worked well for others that the consumer can implement in his or her own trades.
+* * * * * * * *
+Quick Advertising Rules:
+* Don’t sell the profit, sell the product.
+   * Bad: “My intent today is to help you make $80,000 in the next 6 months.”
+   * Good: “My intent today is to show you this product that has helped me make $80,000 in six months.”
+* No numbers in the future.
+   * Bad: “You can make 400% overnight or $7,000 in a week!”
+   * Good: “Let me show you how one trade made $2,200 overnight.”
+* What happens once… is not typical.
+   * Bad: “I’m showing you how you can consistently make gains of 400%, 600%, even 1200% in less than a week.”
+   * Good: “Let me show you some of the top gains we’ve seen from our followers.”
+* No guarantees.
+   * Bad: “I guarantee you’ll make $90k in your first year or I’ll give you your second year free. What do you have to lose?”
+   * Good: No guarantees.
+* Beware of unfathomable earnings.
+   * Bad: “This simulated trade would have earned $750,000 overnight.”
+   * Good: “This simulated trade would have earned $1,200 overnight.”
+* Fictional stories can’t be substantiated.
+   * Bad: “Today, we’re listening in on a call between a secret order of investors who meet once a month at an undisclosed location to discuss their top trade advice.”
+   * Good: “Today, we’ll be talking with three investors who have developed a product which has allowed them to spot shadow trades.”
+* Wiggle words won’t save us.
+   * Bad: “You could make up to $30,000 in a single trade.”
+   * Good: “Let me show you a trade that made one of our followers $2,200 in just one week.”
+
+
+Words you can’t say
+profitable → consistent
+system → approach
+accurate → efficient
+proven → prosper
+
+
+From someone respectable in the space:
+
+If the FTC had to go after everyone that they had to go after, they'd need the budget of the US military, so they pick their battles based on resource allocation, which is to go after the worst offenders, and the worst offenders usually target the sick, old and the poor.".

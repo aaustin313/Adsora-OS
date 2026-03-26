@@ -1,0 +1,295 @@
+What’s generating Decision Fatigue?
+
+
+
+
+* Bullet Based Super-Short Upsells - 16%-46% CVR on $197
+
+
+
+
+* Self-Sorting Upsell (Two or Three Options With Different Prices)   
+
+
+
+
+* No Track Stack Upsell (Discounted Bundle With All The Upsell)  
+
+
+
+
+* Goodwill Upsell (Top, Middle or End of The Sequence)   
+
+
+
+
+* Triple of Triple Stacking Upsell  
+
+
+
+
+* Visual Anchoring Upsell  
+
+
+
+
+* Time Anchoring Outcome  
+
+
+
+
+* Assumptive Upsell  
+
+
+
+
+* The Upsell Unbounce  
+
+
+
+
+* Gender-Based Upsell  
+
+
+
+
+* Rethinking Forced Upsells 
+
+
+
+
+* Age-Based Upsell
+
+
+
+
+* Intent Amplifiers & Modifiers  
+
+
+
+
+* Rent an Offer 
+
+
+
+
+* 14 Tips To Beat The Control   
+ 
+
+
+* Background color changes based on the time of day 
+
+
+
+
+* You use Pre-pop VSL Events  
+
+
+
+
+* Slow Fast Timers  (Add Milliseconds)
+
+
+
+
+* Delayed Declines  
+
+
+
+
+* Dynamic headlines 
+
+
+
+
+* Event-based alert boxes 
+
+
+
+
+* Self-destructing coupons 
+
+
+
+
+* Reconsideration Pop Up 
+
+
+
+
+* The Censored Vidcap 
+
+
+
+
+* Emotional Ticking Timer  
+
+
+
+
+* Conversion Time Windows & The Sales / Lead Gen-Switch - A Better Way To Scale Offers & Optimize Ad Spend  
+
+
+
+
+* Add to cart with FB, Google and Apple
+
+
+
+
+* Speed up the upsell video by about 7-15% without changing the pitch of the voice
+
+
+
+
+* Add Phone Number At The Top Of The Funnel
+
+
+
+
+* Removing the headline and putting instead just "turn your audio up"
+
+
+
+
+* Put an interstitial testimonial reel before the upsell 1 load. "creating your account" then play testimonials to amp up their desire so they land and are ready to go for upsell 1
+
+
+
+
+* Put the "creating your account" page before the upsell 1 load so you can control the sales process
+
+
+
+
+* Use a framework for button copy "Action Verb + Benefit". Evaluative CTA.
+Example: from “Add To Cart” to “Raise My Scores”
+
+
+
+
+   * Add a video on top of the checkout page showing them how to buy
+
+
+
+
+   * Add a CTA inside the VSL DOUBLED
+
+
+
+
+   * Add a small landing page (converting over 90%) between the Ad
+and the VSL
+
+
+
+
+   * Pay What You Want Offer
+
+
+
+
+   * Send email/ SMS to buyers asking: “Do you love what you bought? YES-NO” if YES, goto page with a headline and video that tells them they'll get a bribe if they click on the link below that will take them to the ad where they can leave a comment. If NO, it goes to a form and asks why not so you can fix it
+
+
+
+
+   * Refund Funnel
+
+
+
+
+   * Marketing Moneyball
+
+
+
+
+   * Optimize pixel before the CTA instead of post-purchase
+
+
+
+
+   * Look at the biggest drop-off on a VSL and fix them
+
+
+
+
+   * Thank You Page Offers (Bundle, affiliate, JVs, upsell discounted, book-a-call for HT)
+
+
+
+
+   * Outbound phone sales (1. Partials & Declines - 2. Welcome Calls)
+
+
+
+
+   * Ride-Along Offers (Offers when they receive their order at home - Package)
+
+
+
+
+   * Duplicate your email list
+
+
+
+
+   * Test Font Size
+
+
+
+
+   * On downsells = instead of NO thanks, you put “Let me think about. Send me an email and SMS so I can come back to this later” - Never let them say no
+
+
+
+
+   * Bribe them with a high-value free product if they join your offer
+
+
+
+
+   *   
+
+
+
+
+
+      * In the close of a sales letter, mention that most people buy X package (the bigger one) because [insert good reasons for buying the bigger package]. Similarly, for e-comm, if you have multiple quantity options, add a line of copy that says something like “X is the most popular quantity” or “most people buy X quantity”.
+
+
+      * Use one of those social proof widgets that display the names of people who just bought and how recently they bought (ex: “Mark L. from Cleveland ordered [X PRODUCT] 15 minutes ago”)
+
+
+      * For free trials on subscription products, offer people a bonus if they upgrade to a paid membership before their free trial expires. Here’s an example: 
+  
+
+
+
+
+         * For subscriptions, give people a little bonus for each onboarding step they take. (In the case of Jasper, above, the bonus is more credits.) Doing this gives people an incentive to go through the onboarding process to learn how to use the product, which increases the likelihood they'll use it and benefit from it, which increases the likelihood they'll stay subscribed, which increases LTV.
+
+
+         * Add urgency by adding a line of copy at the top of a sales page that says something like “We’re running low on stock.” (Think Amazon: “Only X left at this price”.)
+
+
+
+
+Here's are 14 quick and easy ways to beat the control that come to mind:
+            * Change the background of your page. Black can beat white, white can beat black. 100% one color will beat the other, try it.
+            * Add emotional audio to your VSL. Goto AudioJungle.com and type in "Cinematic" and you'll see what I mean
+            * Add a triple stack close. Standard "lets go", then "Emotional" and then "Logical"
+            * Add current events from the news on the intro...Biden winning? stick news clips of Biden, if your market watches the Kardashians, stick news clips of them on the intro
+            * Make sure the ads are derived from the VSL copy. The Ads serve the VSL, the VSL does NOT serve the ads.
+            * Speed up the voice without changing the pitch (see other thread here)
+            * Add a qualifier button under the VSL "If you agree to these 3 things then you can buy"
+            * Front load the testimonials up front in the VSL
+            * Add self sorting upsells
+            * Add a pre-check bump
+            * Add a last minute bump slider in like Amazon does (Gonna make a separate post about this)
+            * Make your money back guarantee 1 year
+
+
+
+
+More will be added in the comments when they come to mind. Add yours in the comments below.

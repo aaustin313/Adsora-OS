@@ -1,0 +1,65 @@
+Audience:
+Best Copy:
+
+
+
+
+The more familiarity of the language, the higher the trust, and thus, if the ad is as how they speak, there will be a better response to it.
+Now, getting that "voice" right isn't so easy, but here's an easy way to do it.
+
+
+Here's how it's done:
+Step 1. Take your best ad copy/ad script
+Step 2. Run Chat GPT Prompt “Rewrite As (audience description + age)"
+* Use either chat.openai.com/chat or Claude.AI to run the prompt
+
+
+
+
+Example:
+Rewrite ad as a 40-year-old white-collar dad of two:
+[Best Ad ]
+
+
+
+
+Match age and demographic to the audience.
+You will have to clean it up, but it'll generate a better response than what you had.
+
+
+
+
+
+
+Examples of working copy with personalized opening:
+"As a 50-year-old professional juggling a career and family, I know how precious time is. Creating a profitable online course might seem overwhelming, but there's a simpler way." - a customer of Mini-Lessons Academy
+Mini Lessons Academy is an AI-powered course creation platform with instant automation and seamless integration.
+With Mini-Lessons Academy, you can finally:
+➡️ Create courses in just 5 minutes without any research! 
+➡️ Launch your course without struggling with graphic design.
+➡️ Host your course effortlessly without technical headaches.
+➡️ Monetize your course quickly and effectively. 
+➡️ Enjoy more free time while generating passive income.
+
+
+All of this without spending weeks on preparation and dealing with complicated setups.
+
+
+🤩 Micro-Learning Academy is the PERFECT solution for:
+- Busy professionals
+- Entrepreneurs
+- Coaches
+- Educators
+- Content creators
+- Consultants
+- Small business owners
+- Freelancers
+
+
+And the best part is, you can get started today for just $27.
+
+
+So, if you’d like to create your profitable online course effortlessly, you can experience it today: 👉 https://minilessonsacademy.com/launch-course
+
+
+But because the price will go up soon, this might be your final chance to get Mini Lessons Academy at a special offer of just $27 today.

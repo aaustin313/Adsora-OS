@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Ad 4 - Speed Angle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Segoe UI', Arial, sans-serif; }
+  .ad {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    background: linear-gradient(150deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  /* Speed lines */
+  .speed-line {
+    position: absolute;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(232,197,71,0.3), transparent);
+    border-radius: 2px;
+  }
+  .speed-line:nth-child(1) { top: 150px; left: -50px; width: 400px; transform: rotate(-5deg); }
+  .speed-line:nth-child(2) { top: 300px; right: -50px; width: 350px; transform: rotate(3deg); }
+  .speed-line:nth-child(3) { bottom: 250px; left: -30px; width: 300px; transform: rotate(-2deg); }
+  .speed-line:nth-child(4) { bottom: 400px; right: -20px; width: 450px; transform: rotate(4deg); }
+  /* Clock */
+  .clock-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin-bottom: 50px;
+  }
+  .clock-face {
+    width: 280px;
+    height: 280px;
+    border: 8px solid #e8c547;
+    border-radius: 50%;
+    position: relative;
+    background: rgba(232,197,71,0.05);
+    box-shadow: 0 0 60px rgba(232,197,71,0.15), inset 0 0 30px rgba(232,197,71,0.05);
+  }
+  .clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: #e8c547;
+    border-radius: 50%;
+  }
+  .hand-hour {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    width: 8px;
+    margin-left: -4px;
+    height: 70px;
+    background: #fff;
+    border-radius: 4px;
+    transform: rotate(-30deg);
+  }
+  .hand-minute {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    width: 5px;
+    margin-left: -2.5px;
+    height: 100px;
+    background: #e8c547;
+    border-radius: 3px;
+    transform: rotate(90deg);
+  }
+  /* Hour markers */
+  .marker {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #e8c547;
+    top: 10px;
+    left: 50%;
+    margin-left: -2px;
+    transform-origin: 2px 130px;
+  }
+  .marker:nth-child(2) { transform: rotate(30deg); }
+  .marker:nth-child(3) { transform: rotate(60deg); }
+  .marker:nth-child(4) { transform: rotate(90deg); }
+  .marker:nth-child(5) { transform: rotate(120deg); }
+  .marker:nth-child(6) { transform: rotate(150deg); }
+  .marker:nth-child(7) { transform: rotate(180deg); }
+  .marker:nth-child(8) { transform: rotate(210deg); }
+  .marker:nth-child(9) { transform: rotate(240deg); }
+  .marker:nth-child(10) { transform: rotate(270deg); }
+  .marker:nth-child(11) { transform: rotate(300deg); }
+  .marker:nth-child(12) { transform: rotate(330deg); }
+  /* "7 DAYS" badge on clock */
+  .days-badge {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e8c547;
+    color: #0a0a0a;
+    font-size: 28px;
+    font-weight: 900;
+    padding: 10px 30px;
+    border-radius: 30px;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(232,197,71,0.4);
+  }
+  /* House + cash icons */
+  .icons-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    font-size: 50px;
+    opacity: 0.6;
+  }
+  /* Main text */
+  .main-text {
+    font-size: 80px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .main-text .gold {
+    color: #e8c547;
+  }
+  .sub-text {
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0.75;
+    margin-bottom: 45px;
+    line-height: 1.4;
+  }
+  .cta-btn {
+    background: #e8c547;
+    color: #0a0a0a;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 22px 55px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 6px 30px rgba(232,197,71,0.35);
+  }
+  /* Bottom metrics */
+  .metrics {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 60px;
+    opacity: 0.4;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="speed-line"></div>
+  <div class="speed-line"></div>
+  <div class="speed-line"></div>
+  <div class="speed-line"></div>
+
+  <div class="clock-container">
+    <div class="clock-face">
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="marker"></div>
+      <div class="hand-hour"></div>
+      <div class="hand-minute"></div>
+      <div class="clock-center"></div>
+    </div>
+    <div class="days-badge">CLOSE IN 7 DAYS</div>
+  </div>
+
+  <div class="main-text">
+    CLOSE IN <span class="gold">DAYS</span>
+  </div>
+  <div class="sub-text">
+    No listings. No open houses.<br>No waiting months.
+  </div>
+  <div class="cta-btn">See If You Qualify →</div>
+  <div class="metrics">
+    <span>No Agents</span>
+    <span>No Fees</span>
+    <span>No Delays</span>
+  </div>
+</div>
+</body>
+</html>

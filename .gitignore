@@ -1,7 +1,6 @@
 # Secrets - NEVER commit these
 .env
 .env.*
-!.env.example
 *.key
 *.pem
 credentials.json
@@ -10,6 +9,11 @@ secrets/
 
 # API keys and tokens
 **/config/secrets.*
+slack-token.json
+telegram-session.txt
+
+# Temp/scratch files
+tmp_*.js
 
 # OS files
 .DS_Store

@@ -1,0 +1,27 @@
+Now, here's something you should be testing and playing with when it comes to Facebook Ads.
+One thing I've noticed when it comes to Facebook ads is that the length of the ad determines the type and quality of the click and customer that comes from it.
+Typically speaking, shorter ads will generate more clicks, who are mostly curiosity based, that don't' convert as well, yet make up for it on the volume of the clicks...
+...and yet longer ads generate less clicks, who are mostly intent based, that convert well, and yet you lose the volume of clicks in the length of the ad.
+And of course, there's the in the middle length.
+Now, one of the most interesting things is that, for a while I thought, it was an either/or scenario, meaning that if the short ad wasn't working as well, then we have to switch it to a longer ad to generate the intent to move the needle, and vice versa.
+And while this works very well, adjusting the length of the ad, it wasn't the solution, because you're not adhering to what the almighty Facebook algo wants.
+And what the algo wants is something for everyone in order to keep the overall engagement high.
+One of the things I've noticed as I post organically here on Facebook is that shorter posts will get way more people people seeing them than longer posts.
+There's a huge difference.
+Knowing this, one thing Facebook has a metric that's known as "dwell time", you can look it up.
+Basically, dwell time is the total amount of time someone hovered over your post within the Newsfeed. This includes both users who have engaged and not engaged with the content.
+Now, knowing this Facebook algo is segmenting users into buckets.
+Short form, medium form and long form readers, and it will determine who see's the ad, who engages with the ad and who responds to the ad.
+So before moving the short ad over to the long ad to optimize it worked, but now knowing that they use dwell time as a factor in the ad platform, the better strategy is to simply launch 3 ads every single time.
+Launch a short, medium and long ad.
+Typically, the best approach for doing this is to write a long ad and then cut it, and then cut it again.
+Same image, same CTA, same everything.
+When we started doing this, we thought that only one would be generating sales, instead all three formats are generating sales as Facebook is now engaging the user base with exactly the length of the format they're most likely to engage with.
+If someone is on Facebook and say they see a long post, expand it...then just move on, reducing dwell time, well that user does NOT want long form anything, and are more likely to engage with short form posts and vice versa.
+So next time you're launching ads launch 3 versions of length, and see how they perform.
+Typically all 3 will generate sales, and then one will stand out, mostly due to the level of intent that's producing that matches your sales page, and then you'll know if you have a short form ad or long form ad audience, from there you'll know the lenght of the ads to focus on.
+The reason this works and everything is going in this direction where the algo will sort content and match it based on length and probability of readership is that as I've said before, production is going up, which is negatively affecting consumption, the equation is out of balance and the algo has to balance, and the best way to balance it is by matching content consumers with not only the type but also the LENGTH of content you're putting out.
+Oh and one more thing...what you'll notice is as you increase ad spend on ads, it'll work early on, and then it starts to "wobble", one of the reasons it wobbles is that it runs out of the right type of person to consume the ad, so it starts mismatching, and one of the ways the mismatch happens is via length of ads, so this will help you get better stability at scale as well.
+
+
+And...one other thing I've seen is that people will consume different lengths of content/ads on different days, so Monday-Wednesday will see long-form consumption, while Thursday-Sunday will short-form consumption; this what length gets consume on what days also affects the fluctuation in ads, and having 3 will allow the algo to pace itself better.
