@@ -8,6 +8,7 @@
 const adLibrary = require("../apis/meta-ad-library");
 const trends = require("../apis/google-trends");
 const news = require("../apis/google-news");
+const reddit = require("../apis/reddit");
 const fb = require("../facebook/ads");
 const { addLog } = require("../pipeline/context");
 const { saveAgentOutput } = require("../pipeline/store");
@@ -81,9 +82,9 @@ async function run(ctx) {
   }
 
   // Run all data fetches in parallel
-  addLog(ctx, `Fetching data: Ad Library (${searchConfig.direct.length} terms), Trends, News, Own Performance`);
+  addLog(ctx, `Fetching data: Ad Library (${searchConfig.direct.length} terms), Trends, News, Reddit, Own Performance`);
 
-  const [competitorAds, indirectAds, trendsData, newsData, ownPerformance] = await Promise.allSettled([
+  const [competitorAds, indirectAds, trendsData, newsData, redditData, ownPerformance] = await Promise.allSettled([
     // Direct competitor ads
     adLibrary.searchMultiple(searchConfig.direct, { limit: 30 }),
     // Indirect/adjacent ads
@@ -92,6 +93,8 @@ async function run(ctx) {
     trends.researchVertical(vertical, searchConfig.direct.slice(0, 3)),
     // Google News
     news.searchMultiple(searchConfig.news || searchConfig.direct.slice(0, 3)),
+    // Reddit discussions & sentiment
+    reddit.searchVertical(searchConfig.direct.slice(0, 4), vertical, { limit: 15, fetchComments: true }),
     // Own FB performance
     fetchOwnPerformance(ctx),
   ]);
@@ -120,6 +123,14 @@ async function run(ctx) {
   // Compile news
   if (newsData.status === "fulfilled") {
     ctx.research.newsHooks = newsData.value;
+  }
+
+  // Compile Reddit data
+  if (redditData.status === "fulfilled") {
+    ctx.research.redditDiscussions = redditData.value;
+    let totalPosts = 0;
+    for (const [, posts] of redditData.value) totalPosts += posts.length;
+    addLog(ctx, `Found ${totalPosts} Reddit discussions`);
   }
 
   // Compile own performance
@@ -219,6 +230,11 @@ async function synthesizeResearch(ctx) {
     newsSummary = news.formatNewsForAnalysis(ctx.research.newsHooks);
   }
 
+  let redditSummary = "No Reddit data.";
+  if (ctx.research.redditDiscussions instanceof Map && ctx.research.redditDiscussions.size > 0) {
+    redditSummary = reddit.formatForAnalysis(ctx.research.redditDiscussions);
+  }
+
   let ownPerfSummary = "Own performance data not available.";
   if (ctx.research.ownPerformance?.accounts?.length) {
     ownPerfSummary = "OWN FB ADS PERFORMANCE (last 7 days):\n";
@@ -242,6 +258,8 @@ ${adSummary}
 
 === ${newsSummary}
 
+=== ${redditSummary}
+
 === ${ownPerfSummary}
 
 ---
@@ -256,11 +274,13 @@ Produce a structured research brief with these sections:
 
 4. **TRENDING ANGLES** (from Google Trends + News): What current events, trends, or cultural moments can be leveraged? List 3-5 specific angle ideas with the trend they tie into.
 
-5. **GAP ANALYSIS**: What angles are competitors NOT using that could work? Where is the opportunity?
+5. **CONSUMER SENTIMENT** (from Reddit): What are real people saying about this topic? What pain points, complaints, questions, and desires come up most? What language do they use? What objections do they have? This is gold for ad copy — use their exact words.
 
-6. **OWN PERFORMANCE ANALYSIS**: Based on our own ads, what's working and what's not? What should we double down on vs. cut?
+6. **GAP ANALYSIS**: What angles are competitors NOT using that could work? Where is the opportunity? Include gaps identified from Reddit sentiment vs. current ad messaging.
 
-7. **RECOMMENDED CONCEPTS** (5-8 specific ad concepts): For each concept, provide:
+7. **OWN PERFORMANCE ANALYSIS**: Based on our own ads, what's working and what's not? What should we double down on vs. cut?
+
+8. **RECOMMENDED CONCEPTS** (5-8 specific ad concepts): For each concept, provide:
    - Concept name (short label)
    - Hook approach (first 1-2 lines)
    - Angle/emotion

@@ -13,6 +13,7 @@ const { scanAllAccounts, formatAlertMessage, formatDailySummary, getLastScan } =
 const launchFlow = require("./launchFlow");
 const forwardLaunchFlow = require("./forwardLaunchFlow");
 const pipelineFlow = require("./pipelineFlow");
+const videoStandalone = require("../agents/video-standalone");
 const fs = require("fs");
 const path = require("path");
 
@@ -123,9 +124,11 @@ function startTelegramBot() {
       "/lp [description] — Build a landing page from scratch\n\n" +
       "Creative Pipeline:\n" +
       "/pipeline <offer> — Full end-to-end creative production\n" +
-      "/research <offer> — Research competitor ads + trends\n" +
+      "/research <offer> — Research competitor ads + trends + Reddit\n" +
       "/evaluate <url> — Score an offer for FB (0-10)\n" +
       "/scripts <offer> — Research + generate ad scripts\n" +
+      "/video <prompt> — Generate a video with Kling AI\n" +
+      "/video status <taskId> — Check video generation status\n" +
       "/pipeline status — Check pipeline progress\n" +
       "/pipeline cancel — Stop running pipeline\n\n" +
       "Facebook Ads:\n" +
@@ -944,6 +947,77 @@ function startTelegramBot() {
     } catch (err) {
       clearInterval(typingInterval);
       await ctx.reply("❌ " + (err.message?.slice(0, 200) || "Script generation error"));
+    }
+  });
+
+  // /video — Standalone video generation with Kling AI
+  bot.command("video", async (ctx) => {
+    const input = ctx.match?.trim();
+
+    if (!input) {
+      await ctx.reply(
+        "Usage:\n" +
+        "/video <prompt> — Generate a video from text\n" +
+        "/video status <taskId> — Check status of a video task\n\n" +
+        "Options (add to end of prompt):\n" +
+        "  --10s — 10 second video (default: 5s)\n" +
+        "  --landscape — 16:9 aspect ratio (default: 9:16 vertical)\n\n" +
+        "Example: /video A person looking at camera, talking about saving money on home repairs --10s"
+      );
+      return;
+    }
+
+    // Check status sub-command
+    if (input.startsWith("status ")) {
+      const taskId = input.replace("status ", "").trim();
+      try {
+        const status = await videoStandalone.checkStatus(taskId);
+        await ctx.reply(`Video task ${taskId}:\nStatus: ${status.status}\n${status.videoUrl ? `URL: ${status.videoUrl}` : ""}`);
+      } catch (err) {
+        await ctx.reply("❌ " + (err.message?.slice(0, 200) || "Status check failed"));
+      }
+      return;
+    }
+
+    // Parse options from prompt
+    let prompt = input;
+    const options = {};
+
+    if (prompt.includes("--10s")) {
+      options.duration = "10";
+      prompt = prompt.replace("--10s", "").trim();
+    }
+    if (prompt.includes("--landscape")) {
+      options.aspectRatio = "16:9";
+      prompt = prompt.replace("--landscape", "").trim();
+    }
+
+    await ctx.reply(`🎬 Generating video...\nPrompt: "${prompt.slice(0, 100)}${prompt.length > 100 ? "..." : ""}"\nDuration: ${options.duration || "5"}s | Aspect: ${options.aspectRatio || "9:16"}\n\nThis typically takes 2-5 minutes.`);
+    await ctx.replyWithChatAction("upload_video");
+
+    const progressInterval = setInterval(() => {
+      ctx.replyWithChatAction("upload_video").catch(() => {});
+    }, 4000);
+
+    try {
+      const result = await videoStandalone.generate(prompt, options, async (msg) => {
+        await ctx.reply(msg).catch(() => {});
+      });
+
+      clearInterval(progressInterval);
+
+      // Try to send the video file via Telegram
+      try {
+        await ctx.replyWithVideo(new InputFile(result.filePath), {
+          caption: videoStandalone.formatResult(result),
+        });
+      } catch (uploadErr) {
+        // File might be too large for Telegram (50MB limit), just send the info
+        await ctx.reply("✅ " + videoStandalone.formatResult(result) + "\n\n(File too large to send via Telegram — find it in output/videos/)");
+      }
+    } catch (err) {
+      clearInterval(progressInterval);
+      await ctx.reply("❌ Video generation failed: " + (err.message?.slice(0, 200) || "Unknown error"));
     }
   });
 

@@ -20,6 +20,7 @@ function createContext({ offerUrl, offerName, vertical, targetAccounts, options 
       competitorAds: [],       // from Meta Ad Library
       trendingAngles: [],      // from Google Trends
       newsHooks: [],           // from Google News
+      redditDiscussions: null, // from Reddit (Map of term → posts with comments)
       ownPerformance: {},      // from existing FB Ads data
       topCreatives: [],        // best performers from own ads
       synthesis: "",           // Claude's research synthesis

@@ -106,6 +106,21 @@ function startCronJobs() {
     }
   });
 
+  // Zero Cost Monitor — every hour, checks ClickFlare traffic sources for $0 cost
+  // Alerts to Slack #alerts (independent of Meta kill switch — this is ClickFlare tracking)
+  cron.schedule("5 * * * *", async () => {
+    console.log("[CRON] Running zero-cost monitor...");
+
+    try {
+      const { runZeroCostMonitor } = require("../monitors/zeroCost");
+      const result = await runZeroCostMonitor();
+      console.log(`[CRON] Zero-cost monitor done — ${result.checked} sources checked, ${result.issues.length} issues`);
+    } catch (err) {
+      console.error(`[CRON] Zero-cost monitor failed: ${err.message}`);
+      await sendAlert(`⚠️ Zero-cost monitor failed: ${err.message?.slice(0, 100)}`);
+    }
+  });
+
   if (isMetaPaused()) {
     console.log("⏸️  Cron scheduler active — all Meta jobs will SKIP (kill switch ON)");
   } else {
@@ -115,6 +130,7 @@ function startCronJobs() {
     console.log("   \u{1F4CA} Daily summary (9am ET)");
     console.log("   \u{1F4CB} Weekly report (Monday 9am ET)");
   }
+  console.log("   💸 Zero-cost source monitor (hourly → Slack #alerts)");
 }
 
 module.exports = { startCronJobs };

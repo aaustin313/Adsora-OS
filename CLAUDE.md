@@ -80,9 +80,10 @@ URL or screenshot → Scraper Agent fetches/analyzes page → Analyzer Agent map
 - [x] Google Calendar API — events and scheduling (USE: /calendar)
 - [x] GoHighLevel API — media uploads, funnel listing (USE: /clone [url], /lp [description])
 - [x] Meta Ad Library API — competitor ad research (USE: /research, /pipeline)
+- [x] Reddit API — consumer sentiment, discussions, pain points (auto-included in /research)
 - [x] Google Trends — trending search data for ad angles
 - [x] Google News — current events for timely hooks
-- [ ] Kling AI — video generation (needs KLING_API_KEY + KLING_API_SECRET in .env)
+- [x] Kling AI — standalone video generation + pipeline integration (USE: /video [prompt], needs KLING_API_KEY + KLING_API_SECRET in .env)
 - [ ] QuickBooks API — financial data, P&L, cash flow
 - [x] ClickFlare API — revenue, profit, conversions, attribution (USE: /revenue, /revenue week, /revenue offer)
 - [ ] Computer Use / Screen Control — for platforms without APIs (stretch goal)
@@ -102,9 +103,11 @@ These commands are available as shortcuts, but natural language works too — th
 - /clone [url] — Clone a landing page from URL (generates HTML for GHL upload)
 - /lp [description] — Build a landing page from scratch
 - /pipeline [offer] — Full end-to-end creative pipeline (research → evaluate → scripts → video → compliance → launch)
-- /research [offer] — Research competitor ads (Meta Ad Library + Google Trends + Google News)
+- /research [offer] — Research competitor ads (Meta Ad Library + Google Trends + Google News + Reddit)
 - /evaluate [url] — Score an offer 0-10 for Facebook viability
 - /scripts [offer] — Research + generate ad scripts
+- /video [prompt] — Generate a video with Kling AI (add --10s for 10s, --landscape for 16:9)
+- /video status [taskId] — Check video generation status
 - /pipeline status — Check pipeline progress
 - /pipeline cancel — Stop running pipeline
 - /revenue — Today's revenue by campaign (ClickFlare)

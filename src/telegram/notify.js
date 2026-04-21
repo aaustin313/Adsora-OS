@@ -1,6 +1,6 @@
 /**
  * Standalone Telegram notification sender.
- * Uses raw fetch to Telegram Bot API — no dependency on bot.js or grammY.
+ * Uses raw fetch to Telegram Bot API — no dependency on bot.js.
  * Used by cron jobs, monitors, and any module that needs to alert Austin.
  */
 
